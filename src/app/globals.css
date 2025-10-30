@@ -2,4 +2,5 @@
 
 @theme inline {
   --font-display: var(--font-bwdiagrid);
+  --font-sans: var(--font-abhaya);
 }

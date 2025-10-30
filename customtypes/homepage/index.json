@@ -11,6 +11,12 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "room_list": {
+              "type": "SharedSlice"
+            },
+            "about": {
+              "type": "SharedSlice"
+            },
             "hero": {
               "type": "SharedSlice"
             }

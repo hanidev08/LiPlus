@@ -1,5 +1,13 @@
 .heading {
   font-size: clamp(51px, 7.5vw, 112px);
-  line-height: 1;
+  line-height: 0.9;
   max-width: clamp(300px, 80vw, 1070px);
+}
+
+@media (max-width: 768px) {
+  .heading {
+    font-size: clamp(51px, 7.5vw, 112px);
+    line-height: 0.7;
+    max-width: clamp(300px, 80vw, 1070px);
+  }
 }

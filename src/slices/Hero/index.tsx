@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import { SliceComponentProps } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
 import { Bounded } from "@/components/Bounded";
 import "./style.scss";
@@ -35,7 +35,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
         <RevealText
           field={slice.primary.heading}
           id="hero-heading"
-          className="heading font-display text-[112px] leading-28 text-white uppercase"
+          className="heading font-display text-white uppercase"
           staggerAmount={0.1}
           duration={1.7}
           as="h1"

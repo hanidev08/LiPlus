@@ -1,0 +1,39 @@
+{
+  "id": "room_list",
+  "type": "SharedSlice",
+  "name": "RoomList",
+  "description": "RoomList",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "rooms": {
+          "type": "Group",
+          "config": {
+            "label": "Rooms",
+            "repeat": true,
+            "fields": {
+              "room": {
+                "type": "Link",
+                "config": {
+                  "label": "Room",
+                  "select": "document",
+                  "repeat": false,
+                  "customtypes": [
+                    "room"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

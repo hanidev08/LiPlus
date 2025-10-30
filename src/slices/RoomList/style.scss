@@ -1,0 +1,25 @@
+.headingRoom {
+  font-size: clamp(51px, 7.5vw, 112px);
+  line-height: 0.9;
+  max-width: clamp(300px, 80vw, 1070px);
+}
+
+.bodyRoom {
+  font-size: clamp(12px, 1.7vw, 20px);
+  line-height: 1;
+  max-width: clamp(200px, 30vw, 457px);
+}
+
+@media (max-width: 640px) {
+  .headingRoom {
+    font-size: clamp(51px, 14vw, 81px);
+    line-height: 0.7;
+    max-width: clamp(300px, 80vw, 1070px);
+  }
+
+  .bodyRoom {
+    font-size: clamp(12px, 5.3vw, 30px);
+    line-height: 1.2;
+    max-width: clamp(200px, 100vw, 609px);
+  }
+}

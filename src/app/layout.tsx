@@ -2,13 +2,26 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
+import { Abhaya_Libre } from "next/font/google";
+
+// const abhaya = Abhaya_Libre({
+//   subsets: ["latin"],
+//   weight: ["800"],
+//   display: "swap",
+// });
+
+const abhaya = Abhaya_Libre({
+  variable: "--font-abhaya",
+  subsets: ["latin"],
+  weight: ["800"],
+  display: "swap",
+});
 
 const bwdiagrid = localFont({
   src: "./BwDiagrid-Regular.woff",
   display: "swap",
   variable: "--font-bwdiagrid",
 });
- 
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -22,9 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${bwdiagrid.variable} antialiased`}
-      >
+      <body className={`${bwdiagrid.variable} ${abhaya.variable} antialiased`}>
         <NavBar />
         <main> {children}</main>
       </body>
