@@ -48,7 +48,7 @@ const NavBar = () => {
 
   return (
     <header>
-      <div className="navbar fixed top-0 left-0 z-50 w-full px-3 pt-[17px] text-white md:px-[30px] md:py-[20px]">
+      <div className="navbar fixed top-0 left-0 z-50 w-full px-3 py-[17px] text-white md:px-[30px] md:py-5">
         <div className="flex items-center justify-between">
           <button className="flex items-center gap-[15px]">
             <TbMenu />
