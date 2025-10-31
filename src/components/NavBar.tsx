@@ -24,6 +24,7 @@ const NavBar = () => {
       { backgroundColor: "transparent", color: "white", borderColor: "white" },
       {
         backgroundColor: "white",
+        opacity: "60%",
         color: "#8A6C60",
         borderColor: "#8A6C60",
         duration: 1,
@@ -56,7 +57,9 @@ const NavBar = () => {
           </button>
 
           <div className="md:absolute md:left-1/2 md:-translate-x-1/2">
-            <h1 className=" uppercase font-display text-3xl font-bold">LiPlus</h1>
+            <h1 className="font-display text-3xl font-bold uppercase">
+              LiPlus
+            </h1>
             {/* <Image
               src="/LIPLUSbig.svg"
               alt="LIPLUS"
