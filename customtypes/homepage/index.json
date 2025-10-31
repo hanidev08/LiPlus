@@ -11,6 +11,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "panoramic": {
+              "type": "SharedSlice"
+            },
             "room_list": {
               "type": "SharedSlice"
             },

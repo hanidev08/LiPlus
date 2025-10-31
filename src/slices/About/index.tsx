@@ -44,7 +44,7 @@ const About: FC<AboutProps> = ({ slice }) => {
                   Explore
                 </span>
                 <span>
-                  <FaArrowRight />
+                  <FaArrowRight className="text-[#8A6C60]" />
                 </span>
               </button>
             </div>

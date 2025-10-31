@@ -3,12 +3,14 @@ import localFont from "next/font/local";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 import { Abhaya_Libre } from "next/font/google";
+import { Footer } from "@/components/Footer";
+import { Raleway } from "next/font/google";
 
-// const abhaya = Abhaya_Libre({
-//   subsets: ["latin"],
-//   weight: ["800"],
-//   display: "swap",
-// });
+const raleway = Raleway({
+  variable: "--font-raleway",
+  subsets: ["latin"],
+  display: "swap",
+});
 
 const abhaya = Abhaya_Libre({
   variable: "--font-abhaya",
@@ -35,9 +37,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${bwdiagrid.variable} ${abhaya.variable} antialiased`}>
+      <body
+        className={`${bwdiagrid.variable} ${abhaya.variable} ${raleway.variable} antialiased`}
+      >
         <NavBar />
         <main> {children}</main>
+        <Footer />
       </body>
     </html>
   );

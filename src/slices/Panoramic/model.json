@@ -1,0 +1,53 @@
+{
+  "id": "panoramic",
+  "type": "SharedSlice",
+  "name": "Panoramic",
+  "description": "Panoramic",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading1"
+          }
+        },
+        "body": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Body",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em"
+          }
+        },
+        "imageone": {
+          "type": "Image",
+          "config": {
+            "label": "ImageOne",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "imagetow": {
+          "type": "Image",
+          "config": {
+            "label": "ImageTow",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

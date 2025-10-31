@@ -69,7 +69,11 @@ type ContentRelationshipFieldWithData<
   >;
 }[Exclude<TCustomType[number], string>["id"]];
 
-type HomepageDocumentDataSlicesSlice = RoomListSlice | AboutSlice | HeroSlice;
+type HomepageDocumentDataSlicesSlice =
+  | PanoramicSlice
+  | RoomListSlice
+  | AboutSlice
+  | HeroSlice;
 
 /**
  * Content for Homepage documents
@@ -366,6 +370,81 @@ type HeroSliceVariation = HeroSliceDefault;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
+ * Primary content in *Panoramic → Default → Primary*
+ */
+export interface PanoramicSliceDefaultPrimary {
+  /**
+   * Heading field in *Panoramic → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: panoramic.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Body field in *Panoramic → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: panoramic.default.primary.body
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  body: prismic.RichTextField;
+
+  /**
+   * ImageOne field in *Panoramic → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: panoramic.default.primary.imageone
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  imageone: prismic.ImageField<never>;
+
+  /**
+   * ImageTow field in *Panoramic → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: panoramic.default.primary.imagetow
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  imagetow: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for Panoramic Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type PanoramicSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<PanoramicSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Panoramic*
+ */
+type PanoramicSliceVariation = PanoramicSliceDefault;
+
+/**
+ * Panoramic Shared Slice
+ *
+ * - **API ID**: `panoramic`
+ * - **Description**: Panoramic
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type PanoramicSlice = prismic.SharedSlice<
+  "panoramic",
+  PanoramicSliceVariation
+>;
+
+/**
  * Item in *RoomList → Default → Primary → Rooms*
  */
 export interface RoomListSliceDefaultPrimaryRoomsItem {
@@ -461,6 +540,10 @@ declare module "@prismicio/client" {
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      PanoramicSlice,
+      PanoramicSliceDefaultPrimary,
+      PanoramicSliceVariation,
+      PanoramicSliceDefault,
       RoomListSlice,
       RoomListSliceDefaultPrimaryRoomsItem,
       RoomListSliceDefaultPrimary,
