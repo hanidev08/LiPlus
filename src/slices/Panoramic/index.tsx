@@ -43,7 +43,7 @@ const Panoramic: FC<PanoramicProps> = ({ slice }) => {
       </div>
       <div className=" mt-[50px] sm:mt-[150px] grid grid-cols-4 gap-y-[30px] sm:gap-x-[30px] sm:grid-cols-12">
         <div className="order-2 col-span-4 flex flex-col gap-[15px] sm:gap-[25px] sm:order-1 sm:col-span-8">
-          <div className="relative aspect-5/5 w-full max-w-[954px] max-sm:aspect-6/5 max-sm:w-screen">
+          {/* <div className="relative aspect-5/5 w-full max-w-[954px] max-sm:aspect-6/5 max-sm:w-screen">
             <PrismicNextImage
               field={slice.primary.imageone}
               fill
@@ -58,7 +58,7 @@ const Panoramic: FC<PanoramicProps> = ({ slice }) => {
               alt=""
               className="object-cover"
             />
-          </div>
+          </div> */}
         </div>
         <div className="order-1 col-span-4 sm:order-2 sm:col-span-4">
           <div className="bodyPanoramic font-sans text-[#8A6C60]">
