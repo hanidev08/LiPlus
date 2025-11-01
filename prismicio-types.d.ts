@@ -70,6 +70,8 @@ type ContentRelationshipFieldWithData<
 }[Exclude<TCustomType[number], string>["id"]];
 
 type HomepageDocumentDataSlicesSlice =
+  | ResidencesSlice
+  | CallToActionSlice
   | PanoramicSlice
   | RoomListSlice
   | AboutSlice
@@ -318,6 +320,51 @@ type AboutSliceVariation = AboutSliceDefault;
 export type AboutSlice = prismic.SharedSlice<"about", AboutSliceVariation>;
 
 /**
+ * Primary content in *CallToAction → Default → Primary*
+ */
+export interface CallToActionSliceDefaultPrimary {
+  /**
+   * Heading field in *CallToAction → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  heading: prismic.RichTextField;
+}
+
+/**
+ * Default variation for CallToAction Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type CallToActionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CallToActionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *CallToAction*
+ */
+type CallToActionSliceVariation = CallToActionSliceDefault;
+
+/**
+ * CallToAction Shared Slice
+ *
+ * - **API ID**: `call_to_action`
+ * - **Description**: CallToAction
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type CallToActionSlice = prismic.SharedSlice<
+  "call_to_action",
+  CallToActionSliceVariation
+>;
+
+/**
  * Primary content in *Hero → Default → Primary*
  */
 export interface HeroSliceDefaultPrimary {
@@ -445,6 +492,61 @@ export type PanoramicSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *Residences → Default → Primary*
+ */
+export interface ResidencesSliceDefaultPrimary {
+  /**
+   * Heading field in *Residences → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: residences.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Image field in *Residences → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: residences.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for Residences Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ResidencesSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ResidencesSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Residences*
+ */
+type ResidencesSliceVariation = ResidencesSliceDefault;
+
+/**
+ * Residences Shared Slice
+ *
+ * - **API ID**: `residences`
+ * - **Description**: Residences
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ResidencesSlice = prismic.SharedSlice<
+  "residences",
+  ResidencesSliceVariation
+>;
+
+/**
  * Item in *RoomList → Default → Primary → Rooms*
  */
 export interface RoomListSliceDefaultPrimaryRoomsItem {
@@ -536,6 +638,10 @@ declare module "@prismicio/client" {
       AboutSliceDefaultPrimary,
       AboutSliceVariation,
       AboutSliceDefault,
+      CallToActionSlice,
+      CallToActionSliceDefaultPrimary,
+      CallToActionSliceVariation,
+      CallToActionSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
@@ -544,6 +650,10 @@ declare module "@prismicio/client" {
       PanoramicSliceDefaultPrimary,
       PanoramicSliceVariation,
       PanoramicSliceDefault,
+      ResidencesSlice,
+      ResidencesSliceDefaultPrimary,
+      ResidencesSliceVariation,
+      ResidencesSliceDefault,
       RoomListSlice,
       RoomListSliceDefaultPrimaryRoomsItem,
       RoomListSliceDefaultPrimary,

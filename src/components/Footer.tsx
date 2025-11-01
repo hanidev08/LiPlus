@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export const Footer = () => {
   return (
-    <footer className="font-ral bg-[#8A6C60] pt-10 text-white sm:pt-[50px] pb-5">
+    <footer className="font-ral bg-[#8A6C60] pt-10 text-white sm:pt-[50px] pb-5" id="contact">
       <Bounded>
         <div className="flex flex-col sm:gap-[50px]">
           <div className="grid grid-cols-4 max-sm:gap-10 sm:grid-cols-12">

@@ -23,6 +23,7 @@ const About: FC<AboutProps> = ({ slice }) => {
         data-slice-type={slice.slice_type}
         data-slice-variation={slice.variation}
         className="relative mt-3 overflow-hidden sm:mt-[30px]"
+        id="about"
       >
         <div className="grid grid-cols-4 max-sm:gap-[60px] sm:grid-cols-12">
           <div className="col-span-4 flex flex-col sm:col-span-8">

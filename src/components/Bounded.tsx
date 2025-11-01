@@ -5,6 +5,7 @@ type BoundedProps = {
   as?: ElementType;
   className?: string;
   children: ReactNode;
+  id?: string;
 };
 
 export const Bounded = forwardRef<HTMLElement, BoundedProps>(
@@ -14,14 +15,14 @@ export const Bounded = forwardRef<HTMLElement, BoundedProps>(
         ref={ref}
         className={clsx(
           "px-3 md:px-[30px] [.header+&]:pt-44 [.header+&]:md:pt-32",
-          className
+          className,
         )}
         {...restProps}
       >
-        <div className="mx-auto w-full h-full">{children}</div>
+        <div className="mx-auto h-full w-full">{children}</div>
       </Comp>
     );
-  }
+  },
 );
 
 Bounded.displayName = "Bounded";

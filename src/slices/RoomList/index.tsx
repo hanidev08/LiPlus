@@ -16,6 +16,7 @@ const RoomList: FC<RoomListProps> = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      id="services"
     >
       {slice.primary.rooms.map((item) => {
         if (isFilled.contentRelationship(item.room)) {

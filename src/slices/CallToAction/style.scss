@@ -1,0 +1,13 @@
+.headingCallToAction {
+  font-size: clamp(51px, 7.5vw, 112px);
+  line-height: 0.9;
+  max-width: clamp(300px, 80vw, 800px);
+}
+
+@media (max-width: 640px) {
+  .headingCallToAction {
+    font-size: clamp(51px, 14vw, 61px);
+    line-height: 1;
+    max-width: clamp(300px, 100vw, 800px);
+  }
+}
