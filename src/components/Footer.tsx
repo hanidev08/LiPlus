@@ -53,7 +53,7 @@ export const Footer = () => {
 
           <div className="flex items-center justify-between max-sm:mt-5 max-sm:flex-col max-sm:text-center">
             <ul>
-              <li>Copyright © 53west53 /Legal notice</li>
+              <li>Copyright © LiPlus /Legal notice</li>
             </ul>
             <ul className="max-sm:hidden">
               <li>Back to top</li>

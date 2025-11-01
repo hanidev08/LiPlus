@@ -17,7 +17,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
     <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="relative h-dvh md:h-screen overflow-hidden"
+      className="relative min-h-dvh md:h-screen overflow-hidden"
     >
       <FadeIn
         vars={{ scale: 1 }}
