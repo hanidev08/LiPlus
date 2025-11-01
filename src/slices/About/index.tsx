@@ -50,7 +50,7 @@ const About: FC<AboutProps> = ({ slice }) => {
             </div>
           </div>
           <div className="col-span-4 sm:col-span-4">
-            <div className="relative aspect-3/5 w-full max-w-[582px] max-sm:aspect-4/5 max-sm:w-screen">
+            <div className="relative aspect-3/5 w-full max-w-[582px] max-sm:aspect-4/5">
               <PrismicNextImage
                 field={slice.primary.image}
                 alt=""
