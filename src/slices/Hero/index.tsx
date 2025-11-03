@@ -1,4 +1,6 @@
-import { FC } from "react";
+"use client";
+
+import { FC, useEffect, useState } from "react";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
@@ -6,12 +8,37 @@ import { Bounded } from "@/components/Bounded";
 import "./style.scss";
 import { FadeIn } from "@/components/FadeIn";
 import { RevealText } from "@/components/RevealText";
+import TextLoader from "@/components/ui/TextLoader";
+import clsx from "clsx";
 
 export type HeroProps = SliceComponentProps<Content.HeroSlice>;
 
 /**
  * Component for "Hero" Slices.
  */
+function LoaderWrapper() {
+  const [isLoading, setIsLoading] = useState(true); // ✅ يبدأ بـ true
+
+  useEffect(() => {
+    if (!isLoading) return;
+
+    const timer = setTimeout(() => setIsLoading(false), 4000); // ⏳ وقت الأنيميشن حق TextLoader
+
+    return () => clearTimeout(timer);
+  }, [isLoading]);
+
+  return (
+    <div
+      className={clsx(
+        "fixed inset-0 z-9999 motion-safe:transition-opacity motion-safe:duration-700",
+        isLoading ? "opacity-100" : "pointer-events-none opacity-0",
+      )}
+    >
+      <TextLoader />
+    </div>
+  );
+}
+
 const Hero: FC<HeroProps> = ({ slice }) => {
   return (
     <Bounded
@@ -20,6 +47,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
       className="relative min-h-dvh overflow-hidden md:h-screen"
       id="hero"
     >
+      <LoaderWrapper />
       <FadeIn
         vars={{ scale: 1 }}
         className="absolute inset-0 motion-safe:scale-125"
